@@ -14,7 +14,7 @@
   # Log actions by way of the syslog(3C) facility rather than to the standard
   # output -- a useful option when running the program from cron(1M).
   /usr/bin/logger -p user.notice Waiting for ntpdate to synchronize time from 0.ubnt.pool.ntp.org...
-  /usr/sbin/ntpdate -bus `/usr/bin/host 0.ubnt.pool.ntp.org 1.1.1.1 | /usr/bin/awk '/has address/ { print $4 ; exit }'`
+  /usr/sbin/ntpdate -bus `/usr/bin/host 0.ubnt.pool.ntp.org 1.1.1.1 | /usr/bin/awk '/has IPv4 address/ { print $5 ; exit }'`
 ) &
 
 (
